@@ -19,7 +19,7 @@ namespace Day1
 
             Console.WriteLine("\n\nPart 2:");
             Console.WriteLine("=======");
-            PuzzlePartTwo(testB);
+            PuzzlePartTwo(ex);
 
             Console.Read();
         }
@@ -55,7 +55,32 @@ namespace Day1
 
         private static void PuzzlePartTwo(string input)
         {
+            var sum = 0;
+            var half = input.Length / 2;
 
+            for (var i = 0; i < input.Length; i++)
+            {
+                var ch1 = input[i].ToString();
+                string ch2;
+
+                if (i + half >= input.Length)
+                {
+                    ch2 = input[i - half].ToString();
+                }
+                else
+                {
+                    ch2 = input[i + half].ToString();
+                }
+
+                Console.WriteLine($"CH1 = {ch1}, CH2 = {ch2}");
+
+                if (ch1 == ch2)
+                {
+                    sum += Convert.ToInt32(ch1);
+                }
+            }
+
+            Console.WriteLine($"SUM = {sum}");
         }
     }
 }
