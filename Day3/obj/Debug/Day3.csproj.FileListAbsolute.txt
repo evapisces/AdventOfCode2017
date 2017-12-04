@@ -1,0 +1,7 @@
+\\Mac\Home\Documents\GIT\AdventOfCode2017\Day3\bin\Debug\Day3.exe.config
+\\Mac\Home\Documents\GIT\AdventOfCode2017\Day3\bin\Debug\Day3.exe
+\\Mac\Home\Documents\GIT\AdventOfCode2017\Day3\bin\Debug\Day3.pdb
+\\Mac\Home\Documents\GIT\AdventOfCode2017\Day3\obj\Debug\Day3.csprojResolveAssemblyReference.cache
+\\Mac\Home\Documents\GIT\AdventOfCode2017\Day3\obj\Debug\Day3.csproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\GIT\AdventOfCode2017\Day3\obj\Debug\Day3.exe
+\\Mac\Home\Documents\GIT\AdventOfCode2017\Day3\obj\Debug\Day3.pdb

@@ -1,0 +1,6 @@
+\\Mac\Home\Documents\GIT\AdventOfCode2017\Day4\bin\Debug\Day4.exe.config
+\\Mac\Home\Documents\GIT\AdventOfCode2017\Day4\bin\Debug\Day4.exe
+\\Mac\Home\Documents\GIT\AdventOfCode2017\Day4\bin\Debug\Day4.pdb
+\\Mac\Home\Documents\GIT\AdventOfCode2017\Day4\obj\Debug\Day4.csproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\GIT\AdventOfCode2017\Day4\obj\Debug\Day4.exe
+\\Mac\Home\Documents\GIT\AdventOfCode2017\Day4\obj\Debug\Day4.pdb
