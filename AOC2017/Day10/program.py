@@ -18,7 +18,9 @@ mylist = [0,1,2,3,4]
 currentIndex = 0
 skipsize = 0
 
-for length in testlengths:
+print(numpy.array(mylist)[[3,-2]])
+
+"""for length in testlengths:
     start = currentIndex
     end = length + skipsize
 
@@ -31,4 +33,4 @@ for length in testlengths:
 
     skipsize = skipsize + 1
     print("currentindex (end) = %d") % (currentIndex)
-    print("skipsize (end) = %d") % (skipsize)
+    print("skipsize (end) = %d") % (skipsize)"""

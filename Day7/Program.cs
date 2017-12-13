@@ -13,16 +13,15 @@ namespace Day7
         public static void Main(string[] args)
         {
             var file = File.ReadAllLines("../../testinput.txt");
-
+            Tower = new List<Disk>();
+            SetupTower(file);
             PuzzlePartA(file);
 
             Console.Read();
         }
 
-        private static void PuzzlePartA(string[] file)
+        private static void SetupTower(string[] file)
         {
-            Tower = new List<Disk>();
-
             foreach (var line in file)
             {
                 var splits = line.Split(new string[] { " -> " }, StringSplitOptions.None);
@@ -45,25 +44,81 @@ namespace Day7
                     Tower.Add(disk);
                 }
 
-                if (splits.Count() == 2)    // disks underneath
+                if (splits.Length == 2)    // disks underneath
                 {
                     var right = splits[1];
                     var newSplits = right.Split(new string[] { ", " }, StringSplitOptions.None);
 
-                    Tower.FirstOrDefault(d => d.Name == name).Below = new List<Disk>();
+                    if (Tower.FirstOrDefault(d => d.Name == name).Below == null)
+                    {
+                        Tower.FirstOrDefault(d => d.Name == name).Below = new List<Disk>();
+                    }
+
                     foreach (var newSplit in newSplits)
                     {
-                        Tower.FirstOrDefault(d => d.Name == name).Below.Add(new Disk
+                        if (Tower.Any(d => d.Name == newSplit))
                         {
-                            Name = newSplit
-                        });
+                            var existingDisk = Tower.Find(d => d.Name == newSplit);
+                            Tower.FirstOrDefault(d => d.Name == name).Below.Add(existingDisk);
+                        }
+                        else
+                        {
+                            Tower.FirstOrDefault(d => d.Name == name).Below.Add(new Disk
+                            {
+                                Name = newSplit
+                            });
+                        }
                     }
                 }
-                else
+            }
+        }
+
+        /*private static void PrintItems()
+        {
+            PrintItems(0);
+        }
+
+        private static void PrintItems(int levelOfIndentation)
+        {
+            foreach (var disk in Tower)
+            {
+                Console.WriteLine(disk.Name);
+                Console.WriteLine(levelOfIndentation);
+                PrintItems(levelOfIndentation + 1);
+            }
+        }*/
+
+        private void IterateTower(List<Disk> tower)
+        {
+            
+        }
+
+        private static void PuzzlePartA(string[] file)
+        {
+            var test = new List<Disk>();
+
+            //IterateTower()
+
+            foreach (var disk in Tower)
+            {
+                if (disk.Below?.Count > 0)
                 {
-                    
+                    test.Add(disk);
                 }
             }
+
+            while (test.Count > 1)
+            {
+                foreach (var t in test)
+                {
+                    if (t.Below?.Count == 0)
+                    {
+                        test.Remove(t);
+                    }
+                }
+            }
+
+
         }
     }
 
